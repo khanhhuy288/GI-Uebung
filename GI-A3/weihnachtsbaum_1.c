@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+void print_symbol(char* symbol, int times){
+  for(int i = 0; i < times; i++){
+    printf("%s", symbol);
+  }
+}
+
 int main() {
   int height;
 
@@ -17,17 +23,9 @@ int main() {
   for(int i = 0; i < height; i++){
     int leaves_num = width - dots_num*2;
 
-    for(int i = 0; i < dots_num; i++){
-      printf(".");
-    }
-
-    for(int i = 0; i < leaves_num; i++){
-      printf("*");
-    }
-
-    for(int i = 0; i < dots_num; i++){
-      printf(".");
-    }
+    print_symbol(".", dots_num);
+    print_symbol("*", leaves_num);
+    print_symbol(".", dots_num);
 
     dots_num--;
     printf("\n");

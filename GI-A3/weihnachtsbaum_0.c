@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+void print_symbol(char* symbol, int times){
+  for(int i = 0; i < times; i++){
+    printf("%s", symbol);
+  }
+}
+
 int main(){
   int height;
 
@@ -34,54 +40,31 @@ int main(){
 
   // print border top
   for (int i = 0; i < body_height; i++) {
-    for(int i = 0; i < width; i++){
-      printf(".");
-    }
+    print_symbol(".", width);
     printf("\n");
   }
 
   // print leaves
   for(int i = 0; i < height; i++){
     int leaves_num = width - dots_num*2;
-
-    for(int i = 0; i < dots_num; i++){
-      printf(".");
-    }
-
-    for(int i = 0; i < leaves_num; i++){
-      printf("*");
-    }
-
-    for(int i = 0; i < dots_num; i++){
-      printf(".");
-    }
-
+    print_symbol(".", dots_num);
+    print_symbol("*", leaves_num);
+    print_symbol(".", dots_num);
     dots_num--;
     printf("\n");
   }
 
   // print body
   for(int i = 0; i < body_height; i++){
-    for(int i = 0; i < body_dots_num; i++){
-      printf(".");
-    }
-
-    for (int i = 0; i < body_width; i++) {
-      printf("*");
-    }
-
-    for(int i = 0; i < body_dots_num; i++){
-      printf(".");
-    }
-
+    print_symbol(".", body_dots_num);
+    print_symbol("*", body_width);
+    print_symbol(".", body_dots_num);
     printf("\n");
   }
 
   // print border bottom
   for (int i = 0; i < body_height; i++) {
-    for(int i = 0; i < width; i++){
-      printf(".");
-    }
+    print_symbol(".", width);
     printf("\n");
   }
 
