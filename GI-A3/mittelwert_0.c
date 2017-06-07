@@ -2,7 +2,7 @@
 
 int main()
 {
-  float arr[] = {13.56, -256.2356, 4578.0, -19.98};
+  float arr[] = {13.56, -256.2356, 4578.0, -19.98, 0};
   float avg, sum;
   int arr_length = sizeof(arr)/sizeof(float);
 
